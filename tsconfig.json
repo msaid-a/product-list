@@ -24,6 +24,7 @@
       "@network": ["./src/data/network"],
       "@repository": ["./src/repository"],
       "@service": ["./src/service"],
+      "@utils": ["./src/utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

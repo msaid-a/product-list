@@ -1,30 +1,17 @@
-"use client"
-import { Input } from '@/ui/component';
 import ProductCard from './component/ProductCard';
+import { SectionSearch } from './organism';
 import styles from './styles.module.scss'
-import useHomeModel from './useHomeModel';
-import ProductCardLoading from './component/ProductCardLoading';
+import { ProductServices } from '@/service';
 
-export default function Home() {
-  const { productList, handleProductSearch, setSearch, loading } = useHomeModel()
+export default async function Home({ searchParams }: { searchParams: { query?: string } }) {
+  const response = await ProductServices.getProductList({name: searchParams?.query})
   return (
     <div className={styles.page}>
       <h2>Product List</h2>
-      <Input label=''
-        onChange={(e) => setSearch(e.target.value)}
-        onKeyDown={
-          (e) => {
-            if (e.key === 'Enter') {
-              handleProductSearch()
-            }
-          }}
-        placeholder='Masukan Nama Produk'
-      />
+      <SectionSearch />
       <div className={styles.productGrid}>
-        {loading 
-          ? Array(10).fill(null).map((_, index) => <ProductCardLoading key={index} />) 
-          : productList.map((product) => (
-            <ProductCard key={product.id} image={product.images[0]} rating={product.ratings} {...product} />
+        {response.data.map((product) => (
+          <ProductCard key={product.id} image={product.images[0]} rating={product.ratings} {...product} />
         ))}
       </div>
     </div>
