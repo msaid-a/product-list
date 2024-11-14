@@ -1,75 +1,94 @@
 @import 'colors.scss';
+
 .card {
-    width: 200px;
-    border: 1px solid $gray;
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    font-family: "Roboto", sans-serif;
-    cursor: pointer;
-    &:hover {
-      transform: translateY(-5px);
-    }
+  width: 200px;
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
   }
-  
-  .imageWrapper {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    .outOfStock {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: rgba(255, 0, 0, 0.8);
-      color: $white;
-      padding: 4px 8px;
-      font-size: 0.8rem;
-      border-bottom-left-radius: 4px;
-    }
+
+  border: 1px solid $gray;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  font-family: "Roboto",
+  sans-serif;
+  cursor: pointer;
+  min-height: 380px;
+  max-height: 400px;
+
+  &:hover {
+    transform: translateY(-5px);
   }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+
+  .outOfStock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: $white;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-bottom-left-radius: 4px;
   }
-  
-  .content {
-    padding: 16px;
-  
-    .name {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 0;
-      color: #333;
-    }
-  
-    .description {
-      font-size: 0.9rem;
-      color: #666;
-      margin: 8px 0;
-    }
-  
-    .price {
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin-top: 8px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 16px;
+
+  .name {
+    font-size: 1.2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
     }
 
-    .rating {
-        display: flex;
-        margin: 8px 0;
-        svg {
-            fill: $yellow;
-            width: 1rem;
-            height: 1rem;
-            margin-right: .5rem;
-        }
-      }
+    font-weight: bold;
+    margin: 0;
+    color: #333;
   }
-  
+
+  .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 8px 0;
+  }
+
+  .price {
+    font-size: 1.1rem;
+    @media screen and (max-width: 768px) {
+      font-size: .9rem;
+    }
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  .rating {
+    display: flex;
+    margin: 8px 0;
+
+    svg {
+      fill: $yellow;
+      width: 1rem;
+      height: 1rem;
+      margin-right: .5rem;
+    }
+  }
+}

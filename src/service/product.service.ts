@@ -1,4 +1,4 @@
-import { createDtoProductList } from "@repository";
+import { createDtoProductDetail, createDtoProductList } from "@repository";
 import { axios } from "@network";
 
 class ProductService {
@@ -9,6 +9,11 @@ class ProductService {
             }
         });
         return { data: createDtoProductList(res.data) };
+    }
+
+    async getProductDetail(id: string) {
+        const res = await axios.get(`/products/${id}`);
+        return { data: createDtoProductDetail(res.data) };
     }
 }
 

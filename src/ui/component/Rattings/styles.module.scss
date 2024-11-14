@@ -1,0 +1,15 @@
+// components/Rating.module.scss
+
+@import 'colors.scss;';
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+
+  .star {
+    color: $accent-color;
+    font-size: 1rem;
+  }
+}

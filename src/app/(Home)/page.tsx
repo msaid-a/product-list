@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ProductCard from './component/ProductCard';
 import { SectionSearch } from './organism';
 import styles from './styles.module.scss'
@@ -11,7 +12,9 @@ export default async function Home({ searchParams }: { searchParams: { query?: s
       <SectionSearch />
       <div className={styles.productGrid}>
         {response.data.map((product) => (
-          <ProductCard key={product.id} image={product.images[0]} rating={product.ratings} {...product} />
+          <Link href={`/detail/${product.id}`} key={product.id}>
+            <ProductCard key={product.id} image={product.images[0]} rating={product.ratings} {...product} />
+          </Link>
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import useHomeModel from '../useHomeModel'
-import { Input } from '@/ui/component'
+import { Input } from '@components'
 
 const SectionSearch = () => {
     const { setSearch } = useHomeModel()

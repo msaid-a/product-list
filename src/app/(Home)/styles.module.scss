@@ -4,19 +4,25 @@
   @media screen and (min-width: 768px) {
     width: 70%;
     margin: auto;
-    
   }
   @media screen and (max-width: 768px) {
     width: 100%;
-    
   }
   margin: auto;
   font-family: "Roboto", sans-serif;
+  a {
+    text-decoration: none !important;
+    color: black;
+  }
 }
 
 .productGrid {
   display: grid;
   margin-top: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
   gap: 20px;
 }

@@ -1,10 +1,6 @@
 // components/ProductCard.module.scss
 
 .card {
-    width: 200px;
-    @media screen and (max-width: 768px) {
-        width: 150px;
-    }
     border: 1px solid #ddd;
     border-radius: 6px;
     overflow: hidden;

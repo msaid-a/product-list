@@ -1,0 +1,21 @@
+
+@import 'colors.scss';
+
+.button {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $background-color;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  &.disabled {
+    background-color: $disabled-color;
+    cursor: not-allowed;
+  }
+}
